@@ -1,0 +1,62 @@
+---
+
+---
+<script>
+    const handleImageLoad = (screenSize:number) => {
+        const porscheInteriorPath = screenSize < 768  ? '/images/cut-porsche-taycan-interior-2.png' : '/images/porsche-taycan-interior-2.png';
+        const porschePlugPath = screenSize < 768  ? '/images/cut-porsche-taycan-charging-plug-logo-edp.png' : '/images/porsche-taycan-charging-plug-logo-edp.png';
+        const porscheStationPath = screenSize < 768  ? '/images/cut-porsche-taycan-charging-station-logo-edp.png' : '/images/porsche-taycan-charging-station-logo-edp.png';
+
+        const porscheInteriorElement = document.getElementById('porscheInterior') as HTMLImageElement;
+        const porschePlugElement = document.getElementById('porschePlug') as HTMLImageElement;
+        const porscheStationElement = document.getElementById('porscheStation') as HTMLImageElement;
+
+        if (porscheInteriorElement || porschePlugElement || porscheStationElement)  {
+            porscheInteriorElement.src = porscheInteriorPath;
+            porschePlugElement.src = porschePlugPath;
+            porscheStationElement.src = porscheStationPath;
+
+        }
+    };
+
+    let screenSize = window.innerWidth;
+
+    window.addEventListener('resize', () => {
+        screenSize = window.innerWidth;
+        handleImageLoad(screenSize);
+    });
+
+    handleImageLoad(screenSize);
+
+</script>
+
+<section class="relative my-16 md:my-24 lg:my-68">
+    <!--  Texto -->
+    <div class="relative flex flex-col justify-between h-72 lg:h-[350px]">
+        <h1 class="flex-1 self-center -top-10 text-[72px] md:text-[140px] md:font-bold md:-top-25 lg:text-[260px] lg:-top-60">plug</h1>
+        <h1 class="flex-1 self-center -bottom-18 text-[72px] md:text-[140px] md:font-bold md:bottom-13 lg:text-[260px] lg:bottom-43">and go</h1>
+    </div>
+    <!-- Green Div -->
+
+    <div class="border-0 w-56 h-72 md:w-[450px] md:h-[255px] lg:w-[800px] lg:h-[520px] bg-[#C5F1E5] top-1/2 left-1/2 -translate-1/2 absolute "/>
+
+     <div class="w-56 h-72 lg:w-[800px] lg:h-[520px] absolute top-1/2 left-1/2 -translate-1/2 ">
+        <div class="relative -left-12 flex gap-2 top-4 md:-left-57 md:top-9 md:w-[225px] lg:w-[600px] lg:h-[400px] lg:absolute lg:top-1/2 lg:left-[5%] lg:-translate-1/2 lg:gap-6">
+            <img id="porscheInterior" alt=" Porsche Taycan Interior"/>
+            <img id="porschePlug"  alt=" Porsche Taycan Charging Plug Logo"/>
+            <img id="porscheStation"  alt=" Porsche Taycan Charging Station Logo"/>
+        </div>
+    </div>
+</section>
+
+<style>
+    h1 {
+        position: relative;
+        color: #252525;
+        text-transform: uppercase;
+        text-align: center;
+        z-index: 10;
+        text-shadow: 0px 4px 24px rgba(62, 192, 156, 0.7);
+    }
+
+</style>

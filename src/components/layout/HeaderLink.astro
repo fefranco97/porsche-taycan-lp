@@ -1,0 +1,19 @@
+---
+import {cn} from '../../lib/utils'
+type Props = {
+    title: string;
+    isActive?: boolean;
+}
+
+const { title, isActive=false } = Astro.props
+
+const style = cn('px-3 py-2 rounded-md transition-all duration-300 ease-in-out', {
+    'border border-[#939393] rounded-full px-5 py-1 hover:bg-gray-50': isActive,
+    'text-gray-600 relative group': !isActive
+})
+
+---
+<a href="#" class={style}>{title}
+   <span class={`absolute -bottom-0.5 left-1/2 w-0 h-0.5 bg-gray-500 group-hover:w-1/2 hoverEffect`} />
+   <span class={`absolute -bottom-0.5 right-1/2 w-0 h-0.5 bg-gray-500 group-hover:w-1/2 hoverEffect`} />
+</a>

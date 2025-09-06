@@ -1,0 +1,49 @@
+---
+import edpLogo from '../../assets/edp_logo.svg'
+import menuIcon from '../../assets/menu.svg'
+import HeaderLink from './HeaderLink.astro'
+
+export interface Props {
+  activeMenu?: 'energia-solar' | 'mobilidade-eletrica' | 'servicos' | 'facilita'
+}
+
+const { activeMenu = 'energia-solar' } = Astro.props
+
+---
+<div class="hidden md:inline-flex text-gray-400 px-28 py-3 gap-4 text-xs border-b-2 border-gray-200 w-full">
+    <p class="text-accent">Residências</p>
+    <p>Empresas</p>
+</div>
+<nav class="px-4 xl:px-20 md:py-2 text-accent" >
+  <div class="flex items-center justify-between ">
+    <div class="w-auto md:fit flex items-center gap-2.5 justify-start md:gap-0">
+        <a href="/">
+            <img src={edpLogo.src} class="w-26 md:w-44" alt="EDP Logo" />
+        </a>
+    </div>
+    <div class="hidden md:inline-flex w-full items-center uppercase text-sm tracking-widest justify-center font-bold gap-12">
+        <HeaderLink
+          title="Energia Solar"
+          isActive={activeMenu === 'energia-solar'}
+        />
+        <HeaderLink
+          title="Mobilidade Elétrica"
+          isActive={activeMenu === 'mobilidade-eletrica'}
+        />
+        <HeaderLink
+          title="Serviços"
+          isActive={activeMenu === 'servicos'}
+        />
+        <HeaderLink
+          title="Facilita"
+          isActive={activeMenu === 'facilita'}
+        />
+    </div>    
+    <div class="md:hidden w-auto flex items-center justify-end gap-5">
+      <button aria-label="Menu" class="p-2 rounded-md hover:bg-gray-100 transition ease-in-out duration-300">
+        <img src={menuIcon.src} width="30" height="30" alt="Menu Icon" />
+      </button>
+  </div>
+</nav>
+
+

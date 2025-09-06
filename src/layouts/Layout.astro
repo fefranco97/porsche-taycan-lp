@@ -1,3 +1,19 @@
+---
+import Footer from '../components/layout/Footer.astro';
+import Header from '../components/layout/Header.astro';
+import '../styles/global.css'
+
+interface Props{
+	  title: string;
+	  description?: string;
+	  image?: string;
+	  activeMenu?: 'energia-solar' | 'mobilidade-eletrica' | 'servicos' | 'facilita';
+}
+
+const { title, description, image, activeMenu } = Astro.props as Props;
+
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -5,18 +21,14 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		{description && <meta name="description" content={description} />}
+		{image && <meta property="og:image" content={image} />}
+		<title>{title} | EDP Smart</title>
 	</head>
-	<body>
+	<body class="m-0 flex flex-col h-screen w-full 3xl:max-w-7xl 3xl:mx-auto">
+		<Header activeMenu={activeMenu} />
 		<slot />
+		<Footer />
 	</body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>

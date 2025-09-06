@@ -1,0 +1,47 @@
+---
+
+---
+<script>
+
+    const handleImageLoad = (screenSize:number) => {
+        const imagePath = screenSize < 768  ? '/images/cut-porsche-taycan-mountain-2.png' : '/images/porsche-taycan-mountain-2.png';
+        const imageElement = document.getElementById('porsche-mountains-2') as HTMLImageElement;
+        if (imageElement) {
+            imageElement.src = imagePath;
+        }
+    };
+
+    let screenSize = window.innerWidth;
+
+    window.addEventListener('resize', () => {
+        screenSize = window.innerWidth;
+        handleImageLoad(screenSize);
+    });
+
+    handleImageLoad(screenSize);
+
+
+</script>
+
+<section class="relative py-10 md:px-8 md:py-0 md:pt-16 xl:px-16">  
+    <div class="absolute z-10 top-3 left-5 md:left-16 ">
+    <h1 class="text-[#252525] flex flex-col text-5xl uppercase text-left leading-15  md:text-8xl md:font-bold md:leading-22 lg:text-9xl lg:leading-28 xl:leading-36">
+        <span class="mt-7">
+            go
+        </span>
+        anywhere</h1>
+    </div>
+    <div class="md:h-[325px] lg:h-[400px] xl:h-[650px] w-fit">
+        <img id="porsche-mountains-2"  alt="Porsche Taycan Mountain" class="h-full object-cover md:max-w-3/4 xl:max-w-[63%] object-center" />
+    </div>
+    <div class="absolute top-3 left-20 right-0 h-[400px] sm-phone:left-32 md-phone:left-46 md:w-96 md:h-[575px] md:inset-x-1/2 md:-top-20 lg:h-[675px] lg:w-112 xl:h-[1000px] xl:inset-x-5/12 xl:-top-100 xl:w-max ">
+        <img src="/images/carregador-wallbox-publico.png" alt="Carregador Wallbox Público" class="object-cover h-full object-left-bottom" />
+    </div>
+</section>
+
+<style>
+    h1 {
+        font-family: 'inter', sans-serif;
+        text-shadow: 0px 4px 24px rgba(62, 192, 156, 0.7);
+    }
+</style>

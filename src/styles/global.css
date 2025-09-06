@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import 'tailwindcss';
+
+@theme inline {
+  --color-background: var(--background);
+  --color-accent: var(--accent);
+  --color-light-03: var(--light-03);
+  --color-primary: var(--primary);
+  --color-neu-01: var(--neu-01);
+  --color-neu-08: var(--neu-08);
+  --font-roboto: 'Roboto', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+
+  --breakpoint-sm-phone: 375px;
+  --breakpoint-md-phone: 425px;
+  --breakpoint-tablet: 64rem;
+}
+
+:root {
+  --background: #ffffff;
+  --accent: #616161;
+  --light-03: #c5f1e5;
+  --primary: #51e0b9;
+  --neu-01: #ffffff;
+  --neu-08: #333333;
+}
+
+@layer base {
+  body {
+    @apply bg-background font-roboto;
+  }
+  .hoverEffect {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  button {
+    @apply hover:cursor-pointer;
+  }
+}
+
+@layer components {
+  .form-field {
+    @apply flex flex-col w-full;
+  }
+
+  .form-label {
+    @apply text-[#616161] text-sm font-light mb-0.5;
+    margin-bottom: 2px;
+  }
+
+  .accordion-wrapper {
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform-origin: top center;
+    overflow: hidden;
+  }
+
+  .accordion-wrapper.open {
+    max-height: 800px;
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+    visibility: visible;
+  }
+
+  .accordion-wrapper.closed {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-20px) scaleY(0.9);
+    visibility: hidden;
+  }
+}

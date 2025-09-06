@@ -1,0 +1,62 @@
+---
+
+
+---
+
+<script>
+
+    const handleImageLoad = (screenSize:number) => {
+        const imagePath = screenSize < 768  ? '/images/porsche-mountains.png' : '/images/full-porsche-mountains.png';
+        const imageElement = document.getElementById('porsche-mountains') as HTMLImageElement;
+        if (imageElement) {
+            imageElement.src = imagePath;
+        }
+    };
+
+    let screenSize = window.innerWidth;
+
+    window.addEventListener('resize', () => {
+        screenSize = window.innerWidth;
+        handleImageLoad(screenSize);
+    });
+
+    handleImageLoad(screenSize);
+
+
+</script>
+
+
+<section class="relative">
+    <div class="flex flex-col w-full h-[620px] md:h-[450px]"> 
+        <img id='porsche-mountains' alt="A Porsche Taycan on the mountains" class="object-cover object-center h-full" />
+    </div>
+
+    <div class="absolute top-5 max-w-screen md:max-w-3/5 xl:max-w-2/5">
+        <div class="p-8 xl:pl-26 space-y-4 font-light ">
+            <h2 class="font-inter text-wrap text-3xl font-extralight tracking-wider leading-9 text-white uppercase text-left">
+                Viver em um futuro verde significa liberdade para conhecê-lo
+            </h2>
+            <p class="text-left text-white leading-6">
+                Mudar para um veículo elétrico ajuda a colocar o planeta rumo à eliminação da emissão de carbono e  permite a você rodar em estradas cada vez mais verdes
+            </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:flex md:flex-row gap-4 md:gap-16 text-white font-light px-8 xl:pl-26">
+            <span class="flex flex-col gap-3 items-start justify-center">
+                <span class="text-[#C5F1E5] text-2xl">2,8s</span>
+                Aceleração de 0 - 100
+            </span>
+            <span class="flex flex-col gap-3 items-start justify-center">
+                <span class="text-[#C5F1E5] text-2xl">761cv</span>
+                Potência overboost
+            </span>
+            <span class="col-span-2 flex flex-col gap-3 items-start justify-center w-full ">
+                <span class="text-[#C5F1E5] text-2xl">Velocidade máxima</span>
+                260km/h
+            </span>
+        </div>
+    </div>
+
+
+
+</section>
