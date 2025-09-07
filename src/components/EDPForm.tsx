@@ -78,7 +78,7 @@ const EDPForm = ({ isOpen }: EDPFormProps) => {
               type="text"
               id="name"
               name="name"
-              placeholder="Digite seu nome"
+              placeholder="Type your name"
               value={formData.name}
               onChange={handleChange}
               required
@@ -94,7 +94,7 @@ const EDPForm = ({ isOpen }: EDPFormProps) => {
               type="text"
               id="lastName"
               name="lastName"
-              placeholder="Digite seu sobrenome"
+              placeholder="Type your last name"
               value={formData.lastName}
               onChange={handleChange}
               required
@@ -112,7 +112,7 @@ const EDPForm = ({ isOpen }: EDPFormProps) => {
               type="email"
               id="email"
               name="email"
-              placeholder="Digite seu e-mail"
+              placeholder="Type your e-mail"
               value={formData.email}
               onChange={handleChange}
               required
@@ -128,7 +128,7 @@ const EDPForm = ({ isOpen }: EDPFormProps) => {
               type="tel"
               id="phone"
               name="phone"
-              placeholder="Digite seu telefone"
+              placeholder="Type your phone number"
               value={formData.phone}
               onChange={handleChange}
               required
@@ -146,7 +146,7 @@ const EDPForm = ({ isOpen }: EDPFormProps) => {
           <button
             type="submit"
             className="bg-[#F6334F] text-white font-bold rounded-3xl px-4 py-2 shadow-md shadow-[#F6334F] hover:bg-[#F6334F]/80 hoverEffect disabled:opacity-50 disabled:cursor-not-allowed">
-            {isLoading ? <span className="p-4 rounded-full border-1 animate-spin"></span> : 'Ativar Cartão'}
+            {isLoading ? <span className="p-4 rounded-full border-1 animate-spin"></span> : 'Activate Now'}
           </button>
         </div>
       </form>

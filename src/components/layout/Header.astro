@@ -12,8 +12,8 @@ const { activeMenu = 'energia-solar' } = Astro.props
 
 ---
 <div class="hidden md:inline-flex text-gray-400 px-28 py-3 gap-4 text-xs border-b-2 border-gray-200 w-full">
-    <p class="text-accent">Residências</p>
-    <p>Empresas</p>
+    <p class="text-accent">Homes</p>
+    <p>Businesses</p>
 </div>
 <nav class="px-4 xl:px-20 md:py-2 text-accent" >
   <div class="flex items-center justify-between ">
@@ -24,19 +24,19 @@ const { activeMenu = 'energia-solar' } = Astro.props
     </div>
     <div class="hidden md:inline-flex w-full items-center uppercase text-sm tracking-widest justify-center font-bold gap-12">
         <HeaderLink
-          title="Energia Solar"
+          title="Solar Energy"
           isActive={activeMenu === 'energia-solar'}
         />
         <HeaderLink
-          title="Mobilidade Elétrica"
+          title="Electrical Mobility"
           isActive={activeMenu === 'mobilidade-eletrica'}
         />
         <HeaderLink
-          title="Serviços"
+          title="Services"
           isActive={activeMenu === 'servicos'}
         />
         <HeaderLink
-          title="Facilita"
+          title="EasyFix"
           isActive={activeMenu === 'facilita'}
         />
     </div>    

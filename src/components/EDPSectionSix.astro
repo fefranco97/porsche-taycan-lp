@@ -15,19 +15,19 @@ const { showCard = true } = Astro.props;
     
     <div class="flex-1 flex flex-col items-center justify-center gap-4">
         <figure>
-            <Image src={CityImage} alt="Cidade">
+            <Image src={CityImage} alt="City">
         </figure>
-        <p class="text-[#3EC09C] text-lg font-inter">Mapa de postos de carregamento</p>
-        <a class="upper text-[#F6334F] font-bold tracking-wider text-center uppercase" href="#">Acessar Mapa&larr;</a>
+        <p class="text-[#3EC09C] text-lg font-inter">Charging station map</p>
+        <a class="upper text-[#F6334F] font-bold tracking-wider text-center uppercase" href="#">Go to map&larr;</a>
     </div>
 
     { showCard && 
         <div class="flex-1 flex flex-col items-center gap-4 relative">
             <figure>
-                <Image src={EVCardImage} alt="Cartão EV Porsche" class="object-cover relative left-5">
+                <Image src={EVCardImage} alt="EV Card Porsche" class="object-cover relative left-5">
             </figure>
-            <p class="text-[#3EC09C] text-lg font-inter">Ainda não possui um EV.Card?</p>
-            <a class="upper text-[#F6334F] font-bold tracking-wider text-center uppercase" href="#">Peça já o seu&larr;</a>
+            <p class="text-[#3EC09C] text-lg font-inter">Don’t have an EV.Card yet?</p>
+            <a class="upper text-[#F6334F] font-bold tracking-wider text-center uppercase" href="#">Request yours now&larr;</a>
         </div> 
     }
 </section>
