@@ -1,19 +1,23 @@
 ---
+import { Image } from 'astro:assets';
+import TaycanTrees from './images/porsche-taycan-interior-1-trees.svg';
+import PorscheLogo from './images/porsche-logo.svg';
+import SmartLogo from './images/logo-smart.svg';
 
 ---
 <section class="relative">
 
     <div class="space-y-6 px-8 -mb-45 flex flex-col gap-8 flex-wrap justify-center items-center 2xl:gap-12">
         <div class="flex justify-center items-end gap-8 mt-24 mb-0 md:mt-10 xl:mt-16 2xl:mt-28 2xl:gap-36">
-            <img src="/images/porsche-logo.svg" alt="Porsche Logo"  class="2xl:scale-200"/>
-            <img src="/images/logo-smart.svg" alt="Smart Logo" class="2xl:scale-200 2xl:-translate-y-4 "/>
+            <Image src={PorscheLogo} alt="Porsche Logo"  class="2xl:scale-200"/>
+            <Image src={SmartLogo} alt="Smart Logo" class="2xl:scale-200 2xl:-translate-y-4 "/>
         </div>
         <h3 class="text-[#333333] text-2xl md:text-3xl md:max-w-72 xl:max-w-96 2xl:max-w-fit 2xl:text-5xl 2xl:pt-14 tracking-wider leading-8 uppercase text-center">um mundo de emoções espera por você</h3>
     </div>
 
 
     <figure class="flex flex-col justify-center overflow-hidden h-[620px] md:h-fit md:overflow-visible">
-        <img src="/images/porsche-taycan-interior-1-trees.svg" alt="Hero Banner" class="scale-[250%] translate-x-26 md:-mt-16 tablet:-mt-44 xl:-mt-60 2xl:-mt-90 md:scale-none md:translate-x-0 " />
+        <Image src={TaycanTrees} alt="Hero Banner" class="w-full scale-[250%] translate-x-26 md:-mt-16 tablet:-mt-44 xl:-mt-60 2xl:-mt-90 md:scale-none md:translate-x-0 " />
     </figure>
 
 </section>

@@ -1,4 +1,8 @@
 ---
+import { Image } from 'astro:assets';
+import CityImage from './images/city.png';
+import EVCardImage from './images/cartao-ev-card-porsche.png';
+
 interface Props{
     showCard?: boolean;
 }
@@ -11,7 +15,7 @@ const { showCard = true } = Astro.props;
     
     <div class="flex-1 flex flex-col items-center justify-center gap-4">
         <figure>
-            <img src="/images/city.png" alt="Cidade">
+            <Image src={CityImage} alt="Cidade">
         </figure>
         <p class="text-[#3EC09C] text-lg font-inter">Mapa de postos de carregamento</p>
         <a class="upper text-[#F6334F] font-bold tracking-wider text-center uppercase" href="#">Acessar Mapa&larr;</a>
@@ -20,7 +24,7 @@ const { showCard = true } = Astro.props;
     { showCard && 
         <div class="flex-1 flex flex-col items-center gap-4 relative">
             <figure>
-                <img src="/images/cartao-ev-card-porsche.png" alt="Cartão EV Porsche" class="object-cover relative left-5">
+                <Image src={EVCardImage} alt="Cartão EV Porsche" class="object-cover relative left-5">
             </figure>
             <p class="text-[#3EC09C] text-lg font-inter">Ainda não possui um EV.Card?</p>
             <a class="upper text-[#F6334F] font-bold tracking-wider text-center uppercase" href="#">Peça já o seu&larr;</a>

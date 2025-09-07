@@ -1,14 +1,14 @@
 ---
 import EDPForm from "./EDPForm";
-
-
 ---
 
 <script>
 
     const handleImageLoad = (screenSize:number) => {
-        const imagePath = screenSize < 768  ? '/images/banner-landingpage-porsche-mobile.png' : '/images/top-banner-porsche.svg';
+        const imagePath = screenSize < 768  ? '../images/banner-landingpage-porsche-mobile.png' : './images/top-banner-porsche.svg';
         const imageElement = document.getElementById('hero-image') as HTMLImageElement;
+
+        console.log(imagePath);
         if (imageElement) {
             imageElement.src = imagePath;
         }
@@ -74,21 +74,17 @@ import EDPForm from "./EDPForm";
         }
     };
 
-    // Reset state quando página carrega
     resetFormState();
 
-    // Initialize event listeners
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', initializeEventListeners);
     } else {
         initializeEventListeners();
     }
 
-    // Re-initialize quando volta da navegação (back/forward)
     window.addEventListener('pageshow', () => {
-        console.log('Page show event - reinitializing...');
         resetFormState();
-        setTimeout(initializeEventListeners, 100); // Small delay to ensure DOM is ready
+        setTimeout(initializeEventListeners, 100); 
     });
 
 </script>
