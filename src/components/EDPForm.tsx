@@ -63,12 +63,17 @@ const EDPForm = ({ isOpen }: EDPFormProps) => {
   }
 
   return (
-    <div className={`accordion-wrapper ${isFormOpen ? 'open' : 'closed'} w-full relative z-50`}>
+    <div
+      className={`accordion-wrapper ${isFormOpen ? 'open' : 'closed'} w-full relative z-20`}
+      style={{ border: 'none', outline: 'none', background: 'transparent' }}>
       <form
         onSubmit={handleSubmit}
         data-form-component
-        className="relative z-10 flex flex-col gap-4 items-center justify-between p-6 w-3/4 md:w-2/3 xl:w-1/3 mx-auto  mt-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+        className="relative z-10 flex flex-col gap-4 items-center justify-between p-6 w-3/4 md:w-2/3 xl:w-1/3 mx-auto mt-4 bg-transparent border-none"
+        style={{ border: 'none', outline: 'none', background: 'transparent' }}>
+        <div
+          className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full"
+          style={{ border: 'none', outline: 'none', background: 'transparent' }}>
           <div className="form-field">
             <label htmlFor="name" className="form-label">
               Name
@@ -106,9 +111,7 @@ const EDPForm = ({ isOpen }: EDPFormProps) => {
               E-mail
             </label>
             <input
-              className="border border-[#DBDBDB] rounded-lg px-4 py-2 w-full placeholder:text-[#DBDBDB] font-light focus:outline-none 
-              invalid:border-red-500
-              "
+              className="border border-[#DBDBDB] rounded-lg px-4 py-2 w-full placeholder:text-[#DBDBDB] font-light focus:outline-none"
               type="email"
               id="email"
               name="email"

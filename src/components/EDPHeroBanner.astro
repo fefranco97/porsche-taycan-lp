@@ -7,8 +7,6 @@ import EDPForm from "./EDPForm";
     const handleImageLoad = (screenSize:number) => {
         const imagePath = screenSize < 768  ? '/images/banner-landingpage-porsche-mobile.png' : '/images/top-banner-porsche.png';
         const imageElement = document.getElementById('hero-image') as HTMLImageElement;
-
-        console.log(imagePath);
         if (imageElement) {
             imageElement.src = imagePath;
         }
@@ -27,14 +25,12 @@ import EDPForm from "./EDPForm";
 
     const toggleForm = () => {
         isFormOpen = !isFormOpen;
-        console.log('Toggling form, new state:', isFormOpen);
         const event = new CustomEvent('toggleForm', { detail: { isOpen: isFormOpen } });
         window.dispatchEvent(event);
     };
 
     const resetFormState = () => {
         isFormOpen = false;
-        console.log('Resetting form state');
         const event = new CustomEvent('resetForm');
         window.dispatchEvent(event);
     };
@@ -42,10 +38,6 @@ import EDPForm from "./EDPForm";
     const initializeEventListeners = () => {
         const searchButton = document.getElementById('search-button');
         const cardNumberInput = document.getElementById('card-number');
-
-        console.log('Initializing event listeners...');
-        console.log('Search button found:', !!searchButton);
-        console.log('Card input found:', !!cardNumberInput);
 
         if (searchButton) {
             // Remove event listener anterior se existir
@@ -62,14 +54,12 @@ import EDPForm from "./EDPForm";
 
     const handleSearchClick = (e: Event) => {
         e.preventDefault();
-        console.log('Search button clicked');
         toggleForm();
     };
 
     const handleInputKeypress = (e: KeyboardEvent) => {
         if (e.key === 'Enter') {
             e.preventDefault();
-            console.log('Enter key pressed');
             toggleForm();
         }
     };
@@ -95,14 +85,14 @@ import EDPForm from "./EDPForm";
 <div class="flex-1 w-full flex flex-col justify-center items-center text-white text-center relative font-light">
     <img id="hero-image" alt="Hero Banner" class="w-full md:block md:w-full" />
 
-    <div class="absolute px-10 bottom-15 md:bottom-10 flex flex-col gap-7 justify-center items-center text-white text-center xl:bottom-43 2xl:bottom-55">
+    <div class="absolute px-10 bottom-15 md:bottom-10 flex flex-col gap-7 justify-center items-center text-white text-center xl:bottom-20 2xl:bottom-55">
         <p class="text-sm md:text-lg xl:text-3xl">Pioneering in Electric Mobility with emotion and performance.
         <br>Are you ready for the green future?</p>
         <p class="text-sm md:text-lg xl:text-xl">Already have an EV Card? Activate it now.</p>
     </div>
 </div>
 
-<div class="relative bg-[#062021] md:bg-[#011f1D] -mt-10 p-10 pb-16 py-12 w-full flex justify-center xl:-mt-40">  
+<div class="relative bg-[#062021] md:bg-[#011f1D] -mt-10 p-10 pb-16 py-12 w-full flex justify-center xl:-mt-30">  
     <div class=" flex gap-8 text-white items-center justify-center font-light md:w-2/3 xl:w-1/3">
         <p class="text-sm md:text-lg">Type your EV Card number</p>
         <p class="text-sm md:text-lg">Link the card to your data</p>
@@ -122,8 +112,7 @@ import EDPForm from "./EDPForm";
         </button>
     </div>
     
-    <!-- Container para o formulário com fundo animado -->
-    <div class="w-full flex justify-center">
+    <div class="w-full flex justify-center ">
         <EDPForm isOpen={false} client:load/>
     </div>
 </div>
